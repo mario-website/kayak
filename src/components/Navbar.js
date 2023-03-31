@@ -31,8 +31,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div>
-      <AppBar position="static">
+    <>
+      <AppBar position="static" color="primary">
         <Toolbar>
           <IconButton
             edge="start"
@@ -60,7 +60,7 @@ const Navbar = () => {
           ))}
         </List>
       </Drawer>
-    </div>
+    </>
   );
 };
 

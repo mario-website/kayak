@@ -32,52 +32,50 @@ const Header = () => {
   ];
 
   return (
-    <header className="header">
-      <div className="container">
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
-              className="mobile-menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" style={{flexGrow: 1}}>
-              Klub Kajakarski
-            </Typography>
-            <nav className="navbar desktop-menu">
-              {menuItems.map((item, index) => (
-                <Button
-                  key={index}
-                  component={Link}
-                  to={item.link}
-                  color="inherit"
-                  variant="text">
-                  {item.text}
-                </Button>
-              ))}
-            </nav>
-          </Toolbar>
-        </AppBar>
-        <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
-          <List>
+    <>
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            onClick={toggleDrawer(true)}
+            className="mobile-menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" style={{flexGrow: 1}}>
+            Klub Kajakarski
+          </Typography>
+          <nav className="navbar desktop-menu">
             {menuItems.map((item, index) => (
-              <ListItem
+              <Button
                 key={index}
                 component={Link}
                 to={item.link}
-                onClick={toggleDrawer(false)}>
-                <ListItemButton>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
+                color="inherit"
+                variant="text">
+                {item.text}
+              </Button>
             ))}
-          </List>
-        </Drawer>
-      </div>
-    </header>
+          </nav>
+        </Toolbar>
+      </AppBar>
+      <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
+        <List>
+          {menuItems.map((item, index) => (
+            <ListItem
+              key={index}
+              component={Link}
+              to={item.link}
+              onClick={toggleDrawer(false)}>
+              <ListItemButton>
+                <ListItemText primary={item.text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+    </>
   );
 };
 
