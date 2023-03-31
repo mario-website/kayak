@@ -1,7 +1,10 @@
 import React from "react";
 import {TextField, Button} from "@mui/material"; // Import the TextField and Button components
+import {useAppContext} from "../../contexts/AppContext";
 
-const CustomForm = ({formConfig, onSubmit}) => {
+const CustomForm = ({onSubmit}) => {
+  // @ts-ignore
+  const {formConfig} = useAppContext();
   // Create a state to store the form values
   const [formValues, setFormValues] = React.useState({});
 

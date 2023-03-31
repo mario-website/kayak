@@ -9,6 +9,7 @@ import Membership from "./pages/Membership";
 import Navbar from "./components/Navbar";
 import "./App.css";
 import {useMediaQuery, ThemeProvider, createTheme} from "@mui/material";
+import {AppProvider} from "./contexts/AppContext";
 
 function App() {
   const theme = createTheme();
@@ -16,20 +17,22 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Router>
-        <div className="container">
-          {isMobile ? <Navbar /> : <Header />}
-          <main>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/events" element={<Events />} />
-              <Route path="/events/:eventId" element={<EventDetails />} />
-              <Route path="/membership" element={<Membership />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
+      <AppProvider>
+        <Router>
+          <div className="container">
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/events" element={<Events />} />
+                <Route path="/events/:eventId" element={<EventDetails />} />
+                <Route path="/membership" element={<Membership />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </Router>
+      </AppProvider>
     </ThemeProvider>
   );
 }

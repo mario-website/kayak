@@ -1,0 +1,17 @@
+.mobile-menu {
+  display: block;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .mobile-menu {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: flex;
+  }
+}

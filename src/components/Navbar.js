@@ -25,9 +25,9 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    {text: "Home", link: "/"},
-    {text: "Events", link: "/events"},
-    {text: "Membership", link: "/membership"},
+    {text: "Strona początkowa", link: "/"},
+    {text: "Wydarzenia", link: "/events"},
+    {text: "Członkostwo", link: "/membership"},
   ];
 
   return (
@@ -42,7 +42,7 @@ const Navbar = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" style={{flexGrow: 1}}>
-            Kayaking Club
+            Klub Kajakarski
           </Typography>
         </Toolbar>
       </AppBar>
